@@ -1,0 +1,4 @@
+#Tecnologias requeridas
+pytest
+selenium
+pytest-html
