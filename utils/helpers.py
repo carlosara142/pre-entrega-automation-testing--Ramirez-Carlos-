@@ -13,14 +13,15 @@ def get_driver():
 
 def login(driver, username, password):
 
-    wait = WebDriverWait(driver , 10)
+    wait = WebDriverWait(driver, 10)
+
 
     driver.get("https://www.saucedemo.com/")
 
-    wait.until(EC.presence_of_element_located((By.ID, "user-name"))).send_keys(username)
+    wait.until(
+        EC.presence_of_element_located((By.ID, "user-names"))
+        ).send_keys(username)
 
-    driver.find_element(By.ID , "password").send_keys(password)
-    driver.find_element(By.ID , "login-button").click()
-
-
+    driver.find_element(By.ID, "password").send_keys(password)
+    driver.find_element(By.ID, "login-button").click()
     
