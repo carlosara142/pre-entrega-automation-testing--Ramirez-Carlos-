@@ -46,6 +46,22 @@ def test_agregar_al_carrito( driver):
     producto_carrito = driver.find_element(By.CLASS_NAME, "inventory_item_name").text
     assert producto_carrito == nombre_producto
 
+def test_menu_hamburguesa( driver):
+    login(driver , "standard_user", "secret_sauce")
+    wait = WebDriverWait(driver , 10)
+
+    btn_hamburguesa = wait.until(EC.element_to_be_clickable((By.ID, "react-burger-menu-btn")))
+    btn_hamburguesa.click()
+    #validar opciones del menu
+    wait = WebDriverWait(driver , 10)
+
+    opciones = wait.until(EC.element_to_be_clickable((By.ID, "inventory_sidebar_link")))
+    opciones.click()
+    
+
+
+    
+
     
     
     
