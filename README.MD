@@ -1,21 +1,21 @@
-#Proyecto de pre entrega de pagina SauceDemo
+# Proyecto de pre entrega de pagina SauceDemo
 "https://www.saucedemo.com/"
 
-El proposito del protecto es validar el funcionamiento correcto de la pagina web asignada,
-mediante el uso de las herramientas tecnologicas Pytes, Selenium y pytest-html. Se debe validar
-el login, el menu de la pagina, catalogo de productos y su validacion, el poder agregar productos 
-al carrito correctamente validando el contador y el nombre de dicho articulo.
+# El propósito del proyecto es validar el correcto funcionamiento de la página web asignada mediante el uso de las herramientas tecnológicas Pytest, Selenium y pytest-html. Se debe validar el inicio de sesión, el menú de la página, el catálogo de productos y su validación, así como la capacidad de agregar productos al carrito correctamente, validando el contador y el nombre de dicho artículo.
 
 
-#Datos
-    Autor: Carlos Ramires
+# Datos personales
+    Autor: Carlos Ramirez
     DNI: 95933346
     Email: carlosara142@gmail.com
 
-# instalacion
+# instalacion mediante terminal
  - pip instal requirements.txt
 
-#Rutas para pruebas unitarias en el termianl
+# Comando del terminal para ejecutar todas las pruebas
+pytest -v
+
+# Rutas para pruebas unitarias en el termianl #
 
 # Validar el login
 pytest tests/test_saucedemo.py::test_login -v
@@ -32,3 +32,6 @@ inventory_sidebar_link
 # test de menu hamburguesa
 
 pytest tests/test_saucedemo.py::test_menu_hamburguesa -v
+
+# Generar reporte HTML
+pytest pre-entrega-final/test_saucedemo.py -v --html=reporte.html
