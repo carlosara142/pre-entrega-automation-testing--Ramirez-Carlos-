@@ -1,13 +1,11 @@
 # Proyecto de pre entrega de pagina SauceDemo
 "https://www.saucedemo.com/"
 
-# El propósito del proyecto es validar el correcto funcionamiento de la página web asignada mediante el uso de las herramientas tecnológicas Pytest, Selenium y pytest-html. Se debe validar el inicio de sesión, el menú de la página, el catálogo de productos y su validación, así como la capacidad de agregar productos al carrito correctamente, validando el contador y el nombre de dicho artículo.
-
-
 # Datos personales
     Autor: Carlos Ramirez
-    DNI: 95933346
     Email: carlosara142@gmail.com
+
+# El propósito del proyecto es validar el correcto funcionamiento de la página web asignada mediante el uso de las herramientas tecnológicas Pytest, Selenium y pytest-html. Se debe validar el inicio de sesión, el menú de la página, el catálogo de productos y su validación, así como la capacidad de agregar productos al carrito correctamente, validando el contador y el nombre de dicho artículo. Dentro de la carpeta de capturas se encuentra evidencia de resultados de test fallidos y excitosos.
 
 # instalacion mediante terminal
  - pip instal requirements.txt
