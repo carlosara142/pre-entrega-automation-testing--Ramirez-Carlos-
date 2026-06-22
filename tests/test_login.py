@@ -1,5 +1,4 @@
 from pages.login_page import LoginPage
-
 from data.users import USER
 import pytest
 
