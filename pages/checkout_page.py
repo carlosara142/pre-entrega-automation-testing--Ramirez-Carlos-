@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from faker import Faker
+
+fake = Faker("es_AR")
 
 class CheckoutPage:
 
@@ -27,10 +30,18 @@ class CheckoutPage:
     def iniciar_checkout(self):
         self.driver.find_element(*self.CHECKOUT_BUTTON).click()
 
-    def completar_formulario(self, usuario):
-        self.driver.find_element(*self.FIRST_NAME_INPUT).send_keys(usuario["first_name"])
-        self.driver.find_element(*self.LAST_NAME_INPUT).send_keys(usuario["last_name"])
-        self.driver.find_element(*self.POSTAL_CODE_INPUT).send_keys(usuario["postal_code"])
+    def completar_formulario(self):
+        #llamar a los metodos que necesitemos para completar el formulario de checkout
+        first_name = fake.first_name()
+        last_name = fake.last_name()
+        postal_code = fake.postcode()
+
+        print(f"Datos generados para el formulario: {first_name} {last_name} {postal_code}")
+
+        #con esto anda perfecto tendriamos que agregar ,usuario dentro de la fucion para que tome los datos del usuario que le pasamos desde el test
+        self.driver.find_element(*self.FIRST_NAME_INPUT).send_keys(first_name)
+        self.driver.find_element(*self.LAST_NAME_INPUT).send_keys(last_name)
+        self.driver.find_element(*self.POSTAL_CODE_INPUT).send_keys(postal_code)
 
     def continuar_checkout(self):
         self.driver.find_element(*self.CONTINUE_BUTTON).click()
