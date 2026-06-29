@@ -4,9 +4,13 @@ from pages.checkout_page import CheckoutPage
 from data.users import USER
 #from data.checkout_data import usuarios_checkout
 import time
+from utils.helpers import load_user_csv , load_user_jason
+
+load_cvs=load_user_csv("data/users.csv")
+load_jason=load_user_jason("data/users.json")
 
 
-@pytest.mark.parametrize("username, password", USER)
+@pytest.mark.parametrize("username, password", load_jason)
 #@pytest.mark.parametrize("checkout_data", usuarios_checkout)
 #no se becesita el checkout_data porque ya generamos los datos de forma aleatoria con faker
 def test_checkout(driver, username, password):
